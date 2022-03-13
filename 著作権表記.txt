@@ -1,0 +1,38 @@
+音楽
+効果音ラボ 
+URL https://soundeffect-lab.info/
+魔王魂
+URL https://maou.audio/
+
+画像
+textures.com
+URL https://www.textures.com/
+
+参考文献
+HLSL シェーダーの魔導書 シェーディングの基礎からレイトレーシングまで
+出版社 翔泳社
+著者 清原 隆行
+
+ゲームプログラミングC++ 
+出版社 翔泳社
+著者 Sanjay Madhav  (著)
+監修 今給黎 隆 (監修)
+翻訳 吉川 邦夫 (翻訳)
+
+○×（まるぺけ）つくろーどっとコム
+URL http://marupeke296.com/
+
+自由気ままに
+URL https://pellmellc12.blog.fc2.com/
+
+フォント
+源ノ角ゴシック
+スマートフォント
+URL https://flopdesign.booth.pm/items/2296502
+
+源ノ角ゴシック
+
+使用外部ツール
+Blender
+Clip Studio
+Audacity
