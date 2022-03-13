@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{a8cdeb46-2f05-458c-88c2-ce4b56ceffc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{cfd7d565-d1fb-43e2-a2ef-b4b6d25af94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="directx">
+      <UniqueIdentifier>{ad420f9b-d520-4e71-9558-57f3854047a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{29191437-d375-452d-a1a7-b085f44ebbb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{5171082f-123d-48df-a2f6-937268e61f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\scene">
+      <UniqueIdentifier>{a135d9ac-cc60-44b4-b01a-d78dfec53758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="function">
+      <UniqueIdentifier>{9e54cf43-711d-42ea-b037-8f1b48c97cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor">
+      <UniqueIdentifier>{74bc7d15-a72b-4580-b04a-3cf3b1a5ffe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component">
+      <UniqueIdentifier>{982f32be-3774-4045-b6bc-e929ebe011b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\scene_function">
+      <UniqueIdentifier>{9fe93c0a-02f8-4ca7-9e2e-8f13e46c3fed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scenes">
+      <UniqueIdentifier>{1419008e-3a02-47b9-8468-a7547ded100f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor_manager">
+      <UniqueIdentifier>{c72649b8-97a0-4306-a494-766cdf5223bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{1600473b-640d-408e-8913-fab7b4bacbc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\calculation">
+      <UniqueIdentifier>{794312fb-ad78-44f7-9c86-9f1c41644cba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\collision">
+      <UniqueIdentifier>{806ba223-1b7d-46b7-a606-ed73c0d9593c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mesh_component">
+      <UniqueIdentifier>{d03c022f-9c95-41b9-a86e-0b951b288cd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\sprite_component">
+      <UniqueIdentifier>{bcaf93f9-578e-43e6-9ac8-551c343cf0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\light_component">
+      <UniqueIdentifier>{d650f44c-62c6-4912-8c57-02602f7b4091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\move_component">
+      <UniqueIdentifier>{d87add10-e7ee-49b9-9d34-f42e01cc1b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="directx\resource">
+      <UniqueIdentifier>{234ce984-0526-49cd-b7a0-09c76e1418d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="directx\rendering_pipline">
+      <UniqueIdentifier>{342d1df2-bf7b-4db4-8ba9-135fc78ca007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="directx\render_data">
+      <UniqueIdentifier>{9e3b349e-5396-4a36-8f02-1ca85fc58eaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\camera">
+      <UniqueIdentifier>{d7f40d6b-2cc0-40c1-9a4e-e588bae42319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\bullet">
+      <UniqueIdentifier>{39656c71-14b9-46a4-b9ae-95963d1d53d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\collision_component">
+      <UniqueIdentifier>{d53c2f06-795d-46b9-9a2b-04ad9d60ddb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mobilesuit_component">
+      <UniqueIdentifier>{6606d5e5-70e0-42b3-89c0-8ee7c5a52d5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mobilesuit_state_component">
+      <UniqueIdentifier>{29d94c68-96e8-4c11-8a46-9086936fd3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mobilesuit_state_component\mobilesuit_state">
+      <UniqueIdentifier>{af670969-3ccc-428a-91f1-88f969d78a23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="particle">
+      <UniqueIdentifier>{e898c746-31ff-40c7-a83e-82baf96947d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mesh_component\debug">
+      <UniqueIdentifier>{01f73372-8dcd-443e-86bc-5bd0d1feaff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui">
+      <UniqueIdentifier>{386263c5-4158-417d-88d5-2daa65457f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\mobilesuit">
+      <UniqueIdentifier>{0a237ab1-5ace-4473-96a5-4d300c8549e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gamedata">
+      <UniqueIdentifier>{c3134d78-a24e-48cd-8aeb-2e71b6e673f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui\mode_select_scene">
+      <UniqueIdentifier>{b6c22c72-3e52-4d47-85b4-ced7df00b3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui\game_scene">
+      <UniqueIdentifier>{2c4c9d0e-e233-472b-be0f-0d832a11b7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\effect">
+      <UniqueIdentifier>{f98d1ded-2223-46a3-b110-d22551529129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\audio_component">
+      <UniqueIdentifier>{4c87649b-34a7-498b-aba4-fa22b216d7bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\light">
+      <UniqueIdentifier>{36b4d26a-6e8b-4465-b359-3a53a0342940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\weapon">
+      <UniqueIdentifier>{999c338f-a056-4c0d-9e13-152bbad796d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\stage">
+      <UniqueIdentifier>{f0393f13-1d05-4e23-ba68-c3081d7e40b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui\title_scene">
+      <UniqueIdentifier>{143e6ad0-a179-40ec-943c-000c9709646d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\fire">
+      <UniqueIdentifier>{1ee7afee-4e77-489e-9dde-0bfde1b9bddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\game_manager">
+      <UniqueIdentifier>{33bec31d-084a-42dd-b277-d78b43b4822b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui\game_over_scene">
+      <UniqueIdentifier>{f3accb11-b159-468d-b784-5335ebc50bbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ui\game_clear_scene">
+      <UniqueIdentifier>{4d415193-bf15-4c2d-b7ce-e2b882f8db24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai">
+      <UniqueIdentifier>{83747f4f-f946-43fe-b138-d271c8be898f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ai">
+      <UniqueIdentifier>{2de871fb-b4d4-4c5f-b64a-e2c5641cb3f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ai\gbfs">
+      <UniqueIdentifier>{f45bf4a6-7554-44bf-ad72-15ea4df695e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ai\astar">
+      <UniqueIdentifier>{160f87dc-dccb-4a6f-be05-39932357961f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ai\meta_ai">
+      <UniqueIdentifier>{500e8942-c283-48bc-bf55-13f99e7d1858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\ai\meta_ai\meta_ai_state">
+      <UniqueIdentifier>{1fd7eafb-4471-42c1-8521-7bcea9028f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\mobilesuit_state_component\character_ai_state">
+      <UniqueIdentifier>{b54e04d5-ad20-431d-b286-85997bb3e7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\component\camera_component">
+      <UniqueIdentifier>{22679f18-9320-45c8-a2cd-1193cc1ed780}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\system\main.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\mywindows.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\fps_manager.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\function\singleton.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\scene\scene.cpp">
+      <Filter>framework\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\scene\scene_manager.cpp">
+      <Filter>framework\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\function\logger.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\actor.cpp">
+      <Filter>framework\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\function\useful_string.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\scene_function\scene_render_manager.cpp">
+      <Filter>framework\scene_function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor_manager\actor_manager.cpp">
+      <Filter>framework\actor_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\input_manager.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\myimgui.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\calculation\convenient_directxmath.cpp">
+      <Filter>math\calculation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\calculation\math.cpp">
+      <Filter>math\calculation</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\collision\linesegment_collision.cpp">
+      <Filter>math\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\collision\obb_collision.cpp">
+      <Filter>math\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\collision\collision_detection.cpp">
+      <Filter>math\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\function\time_measurement.cpp">
+      <Filter>function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\animation_model_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\cube_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\grid_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\mesh_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\mesh_field_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\model_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\cameracomponent\camera_component.cpp">
+      <Filter>framework\component\camera_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\sprite_component\sprite_component.cpp">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\component.cpp">
+      <Filter>framework\component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\light_component\directional_light_component.cpp">
+      <Filter>framework\component\light_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\light_component\point_light_component.cpp">
+      <Filter>framework\component\light_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\move_component\rigidbody_component.cpp">
+      <Filter>framework\component\move_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\rendering_pipline\deferred_rendering.cpp">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\rendering_pipline\forward_rendering.cpp">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\rendering_pipline\gbuffer.cpp">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\rendering_pipline\output_rendering_result.cpp">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\rendering_pipline\shadowinput.cpp">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\render_data\vertex_structure.cpp">
+      <Filter>directx\render_data</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\animation_model.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\model.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\shader_manager.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\texture_manager.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\renderer.cpp">
+      <Filter>directx</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\camera\debug_camera.cpp">
+      <Filter>framework\actor\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\mobilesuit\player.cpp">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\mobilesuit\enemy.cpp">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor_manager\mobilesuit_manager.cpp">
+      <Filter>framework\actor_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\mobilesuit\mobilesuit.cpp">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor_manager\bullet_manager.cpp">
+      <Filter>framework\actor_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\bullet.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\render_data\cbuffer_data.cpp">
+      <Filter>directx\render_data</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\collision_component\collision_component.cpp">
+      <Filter>framework\component\collision_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\scene_function\scene_collision_manager.cpp">
+      <Filter>framework\scene_function</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_component\boost_component.cpp">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_component\life_component.cpp">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state_component.cpp">
+      <Filter>framework\component\mobilesuit_state_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_boost_dash.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_boost_jump.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_idle.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_walk.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\model_manager.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\cameracomponent\light_camera_component.cpp">
+      <Filter>framework\component\camera_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\particle\particle_manager.cpp">
+      <Filter>particle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\particle\particle.cpp">
+      <Filter>particle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor_manager\other_actor_manager.cpp">
+      <Filter>framework\actor_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\collision_component\obb_collision_component.cpp">
+      <Filter>framework\component\collision_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\debug\obb_debug_view_component.cpp">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_beamrifle_shot.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\cannon.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_cannon_shot.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\sprite_component\changeable_sprite_component.cpp">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\sprite_component\number_sprite_component.cpp">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\timelimit_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\life_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\remaining_bullets_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\sprite_component\gauge_sprite_component.cpp">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\boost_gauge_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\arousal_gauge_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_component\arousal_component.cpp">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_landing_recovery.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\lockon_cursol_billboard_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\skydome_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_air_idle.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_step.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\directx\resource\animation_model_manager.cpp">
+      <Filter>directx\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_turn_around_beamrifle_shot.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\demo_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\fade.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\game_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\field_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\mode_select_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\mode_select_scene\mode_select_scene_ui.cpp">
+      <Filter>framework\actor\ui\mode_select_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\billboard_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\game_scene\mobilesuit_infomation_ui.cpp">
+      <Filter>framework\actor\ui\game_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\changeable_billboard_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\gauge_billboard_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor_manager\effect_manager.cpp">
+      <Filter>framework\actor_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\effect\effect.cpp">
+      <Filter>framework\actor\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\effect\mobilesuit_explosion_effect.cpp">
+      <Filter>framework\actor\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_bend_backward.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\effect\beamrifle_landing_effect.cpp">
+      <Filter>framework\actor\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\audio_component\audio_component.cpp">
+      <Filter>framework\component\audio_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\title_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\system\audio_manager.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\cameracomponent\quaternion_camera_component.cpp">
+      <Filter>framework\component\camera_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\cameracomponent\lockon_camera_component.cpp">
+      <Filter>framework\component\camera_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\light\directional_light.cpp">
+      <Filter>framework\actor\light</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\weapon\beam_saber.cpp">
+      <Filter>framework\actor\weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\instancing_model_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\stage\sideseven_object.cpp">
+      <Filter>framework\actor\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\title_scene\title_scene_ui.cpp">
+      <Filter>framework\actor\ui\title_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\fire\fire.cpp">
+      <Filter>framework\actor\fire</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_jump_standby.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_first.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_second.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_third.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\enemy_bullet.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\other_ui.cpp">
+      <Filter>framework\actor\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\gamemanager\cost_manager.cpp">
+      <Filter>framework\actor\game_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\gamemanager\game_manager.cpp">
+      <Filter>framework\actor\game_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\game_over_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\game_clear_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\game_over_scene\game_over_scene_ui.cpp">
+      <Filter>framework\actor\ui\game_over_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\game_clear_scene\game_clear_scene_ui.cpp">
+      <Filter>framework\actor\ui\game_clear_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ui\game_scene\radar.cpp">
+      <Filter>framework\actor\ui\game_scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\graph.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\weighted_graph.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\gbgfsscratch.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\bfs.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\gbfs.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\heuristic.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\ai_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\ai_test.cpp">
+      <Filter>framework\actor\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\ai_node.cpp">
+      <Filter>framework\actor\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\ai_goal_node.cpp">
+      <Filter>framework\actor\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\gbfs\gbfs_node.cpp">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\gbfs\gbfs_test.cpp">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\gbfs\gbfs_goal_node.cpp">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\astar_scratch.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ai\astar.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\astar\astar_test.cpp">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\astar\astar_node.cpp">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\astar\astar_goal_node.cpp">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\instancing_color_model_component.cpp">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\weighted_graph_node_maker.cpp">
+      <Filter>framework\actor\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\debug\debug_number_billboard_component.cpp">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\weighted_graph_node_loder.cpp">
+      <Filter>framework\actor\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\meta_ai\meta_ai.cpp">
+      <Filter>framework\actor\ai\meta_ai</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_state.cpp">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_move.cpp">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_attack.cpp">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_ai_state_component.cpp">
+      <Filter>framework\component\mobilesuit_state_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state.cpp">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_move.cpp">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_start.cpp">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\mobilesuit\ally.cpp">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_wander_around.cpp">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_down.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_return.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_attack.cpp">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scenes\make_node_scene.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\stage\tree.cpp">
+      <Filter>framework\actor\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\collision\aabb_collision.cpp">
+      <Filter>math\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\collision_component\aabb_collision_component.cpp">
+      <Filter>framework\component\collision_component</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mesh_component\debug\aabb_debug_view_component.cpp">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\system\mywindows.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\main.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\system_data.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\fps_manager.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\scene\scene_manager.h">
+      <Filter>framework\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\function\singleton.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\scene\scene.h">
+      <Filter>framework\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\function\logger.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\actor.h">
+      <Filter>framework\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\function\useful_string.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor_manager\actor_manager.h">
+      <Filter>framework\actor_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\input_manager.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\myimgui.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\calculation\convenient_directxmath.h">
+      <Filter>math\calculation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\calculation\math.h">
+      <Filter>math\calculation</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\collision\linesegment_collision.h">
+      <Filter>math\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\collision\obb_collision.h">
+      <Filter>math\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\collision\collision_detection.h">
+      <Filter>math\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\function\time_measurement.h">
+      <Filter>function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\animation_model_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\cube_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\grid_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\mesh_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\mesh_field_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\model_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\cameracomponent\camera_component.h">
+      <Filter>framework\component\camera_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\sprite_component\sprite_component.h">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\component.h">
+      <Filter>framework\component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\light_component\directional_light_component.h">
+      <Filter>framework\component\light_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\light_component\point_light_component.h">
+      <Filter>framework\component\light_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\move_component\rigidbody_component.h">
+      <Filter>framework\component\move_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\rendering_pipline\deferred_rendering.h">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\rendering_pipline\forward_rendering.h">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\rendering_pipline\gbuffer.h">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\rendering_pipline\output_rendering_result.h">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\rendering_pipline\shadowinput.h">
+      <Filter>directx\rendering_pipline</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\render_data\cbuffer_data.h">
+      <Filter>directx\render_data</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\render_data\sampler_data.h">
+      <Filter>directx\render_data</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\render_data\srv_data.h">
+      <Filter>directx\render_data</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\render_data\uav_data.h">
+      <Filter>directx\render_data</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\render_data\vertex_structure.h">
+      <Filter>directx\render_data</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\animation_model.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\model.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\shader_manager.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\texture_manager.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\renderer.h">
+      <Filter>directx</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\camera\debug_camera.h">
+      <Filter>framework\actor\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\mobilesuit\player.h">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\mobilesuit\enemy.h">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor_manager\mobilesuit_manager.h">
+      <Filter>framework\actor_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\mobilesuit\mobilesuit.h">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor_manager\bullet_manager.h">
+      <Filter>framework\actor_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\bullet.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\collision_component\collision_component.h">
+      <Filter>framework\component\collision_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\scene_function\scene_render_manager.h">
+      <Filter>framework\scene_function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\scene_function\scene_collision_manager.h">
+      <Filter>framework\scene_function</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_component\boost_component.h">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_component\life_component.h">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state_component.h">
+      <Filter>framework\component\mobilesuit_state_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_boost_dash.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_boost_jump.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_idle.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_walk.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\model_manager.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\cameracomponent\light_camera_component.h">
+      <Filter>framework\component\camera_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\particle\particle_manager.h">
+      <Filter>particle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\shader\shader_data.h">
+      <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="source\particle\particle.h">
+      <Filter>particle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor_manager\other_actor_manager.h">
+      <Filter>framework\actor_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\collision_component\obb_collision_component.h">
+      <Filter>framework\component\collision_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\debug\obb_debug_view_component.h">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_beamrifle_shot.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\cannon.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_cannon_shot.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\sprite_component\changeable_sprite_component.h">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\sprite_component\number_sprite_component.h">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\timelimit_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\life_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\remaining_bullets_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\sprite_component\gauge_sprite_component.h">
+      <Filter>framework\component\sprite_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\boost_gauge_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_component\arousal_component.h">
+      <Filter>framework\component\mobilesuit_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\arousal_gauge_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_landing_recovery.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gamedata\game_data.h">
+      <Filter>gamedata</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\lockon_cursol_billboard_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\skydome_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_air_idle.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_step.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\directx\resource\animation_model_manager.h">
+      <Filter>directx\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_turn_around_beamrifle_shot.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\demo_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\fade.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\game_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\field_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\mode_select_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\mode_select_scene\mode_select_scene_ui.h">
+      <Filter>framework\actor\ui\mode_select_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\billboard_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\game_scene\mobilesuit_infomation_ui.h">
+      <Filter>framework\actor\ui\game_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\changeable_billboard_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\gauge_billboard_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gamedata\damage_data.h">
+      <Filter>gamedata</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor_manager\effect_manager.h">
+      <Filter>framework\actor_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\effect\effect.h">
+      <Filter>framework\actor\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\effect\mobilesuit_explosion_effect.h">
+      <Filter>framework\actor\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_bend_backward.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\effect\beamrifle_landing_effect.h">
+      <Filter>framework\actor\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\audio_component\audio_component.h">
+      <Filter>framework\component\audio_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\title_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\system\audio_manager.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\cameracomponent\quaternion_camera_component.h">
+      <Filter>framework\component\camera_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\cameracomponent\lockon_camera_component.h">
+      <Filter>framework\component\camera_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\light\directional_light.h">
+      <Filter>framework\actor\light</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\weapon\beam_saber.h">
+      <Filter>framework\actor\weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\instancing_model_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\stage\sideseven_object.h">
+      <Filter>framework\actor\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\title_scene\title_scene_ui.h">
+      <Filter>framework\actor\ui\title_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\fire\fire.h">
+      <Filter>framework\actor\fire</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_jump_standby.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_second.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_first.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_nkakutou_third.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\enemy_bullet.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\other_ui.h">
+      <Filter>framework\actor\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\gamemanager\cost_manager.h">
+      <Filter>framework\actor\game_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\gamemanager\game_manager.h">
+      <Filter>framework\actor\game_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\game_over_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\game_clear_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\game_over_scene\game_over_scene_ui.h">
+      <Filter>framework\actor\ui\game_over_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\game_clear_scene\game_clear_scene_ui.h">
+      <Filter>framework\actor\ui\game_clear_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ui\game_scene\radar.h">
+      <Filter>framework\actor\ui\game_scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\graph.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\weighted_graph.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\gbgfsscratch.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\bfs.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\gbfs.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\heuristic.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\ai_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\ai_test.h">
+      <Filter>framework\actor\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\ai_node.h">
+      <Filter>framework\actor\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\ai_goal_node.h">
+      <Filter>framework\actor\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\gbfs\gbfs_node.h">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\gbfs\gbfs_test.h">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\gbfs\gbfs_goal_node.h">
+      <Filter>framework\actor\ai\gbfs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\astar_scratch.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ai\astar.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\astar\astar_test.h">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\astar\astar_node.h">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\astar\astar_goal_node.h">
+      <Filter>framework\actor\ai\astar</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\instancing_color_model_component.h">
+      <Filter>framework\component\mesh_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\weighted_graph_node_maker.h">
+      <Filter>framework\actor\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\debug\debug_number_billboard_component.h">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\weighted_graph_node_loder.h">
+      <Filter>framework\actor\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\meta_ai\meta_ai.h">
+      <Filter>framework\actor\ai\meta_ai</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_state.h">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_move.h">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\ai\meta_ai\meta_ai_state\meta_ai_attack.h">
+      <Filter>framework\actor\ai\meta_ai\meta_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_ai_state_component.h">
+      <Filter>framework\component\mobilesuit_state_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state.h">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_move.h">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_start.h">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\mobilesuit\ally.h">
+      <Filter>framework\actor\mobilesuit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_wander_around.h">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_down.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_return.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\character_ai_state\character_ai_state_attack.h">
+      <Filter>framework\component\mobilesuit_state_component\character_ai_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scenes\make_node_scene.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\stage\tree.h">
+      <Filter>framework\actor\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\collision\aabb_collision.h">
+      <Filter>math\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\collision_component\aabb_collision_component.h">
+      <Filter>framework\component\collision_component</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mesh_component\debug\aabb_debug_view_component.h">
+      <Filter>framework\component\mesh_component\debug</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="source\shader\unlit_texture_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\unlit_texture_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\grid_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\grid_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\standard3d_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\standard3d_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_init_cs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_update_cs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_render_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_render_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\gbuffer_input_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\gbuffer_input_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\deferred_rendering_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\deferred_rendering_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\common.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\input_struct.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\struct.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_circle_emitter_cs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_rect_emitter_cs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\unlit_color_texture_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\unlit_color_texture_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\animation_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\particle_demo_emitter_cs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\meshfield_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\meshfield_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\instancing_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\instancing_color_vs.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shader\instancing_color_ps.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
