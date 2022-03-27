@@ -1,3 +1,12 @@
+使用言語
+C++、DirectX11、HLSL
+
+使用ライブラリ
+DirectXTex / MIT License
+GitHub : https://github.com/Microsoft/DirectXTex
+imgui / MIT License
+GitHub : https://github.com/ocornut/imgui
+
 音楽
 効果音ラボ 
 URL https://soundeffect-lab.info/
@@ -15,9 +24,9 @@ HLSL シェーダーの魔導書 シェーディングの基礎からレイト�
 
 ゲームプログラミングC++ 
 出版社 翔泳社
-著者 Sanjay Madhav  (著)
-監修 今給黎 隆 (監修)
-翻訳 吉川 邦夫 (翻訳)
+著者 Sanjay Madhav
+監修 今給黎 隆
+翻訳 吉川 邦夫
 
 ○×（まるぺけ）つくろーどっとコム
 URL http://marupeke296.com/
