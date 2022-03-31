@@ -43,6 +43,7 @@ Particle::Particle(int maxParticleNum)
 	, m_SceneRenderManager(nullptr)
 	, m_MaxParticleNum(maxParticleNum)
 	, m_Dispatch(0)
+	, m_BlendStateInvisibleAddFlag(true)
 {
 	m_Dispatch = m_MaxParticleNum / PARTICLE_UPDATE_THREDNUM;
 }
@@ -123,7 +124,10 @@ void Particle::Draw() const
 	m_DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	// ìßâﬂâ¡éZçáê¨Ç…Ç∑ÇÈ
-	renderer.SetBlendState(Renderer::BLENDSTATE_INVISIBLEADD);
+	if (m_BlendStateInvisibleAddFlag == true)
+	{
+		renderer.SetBlendState(Renderer::BLENDSTATE_INVISIBLEADD);
+	}
 
 	renderer.SetDepthStencilState(Renderer::DEPTHSTENCILSTATE_NOWRITE);
 

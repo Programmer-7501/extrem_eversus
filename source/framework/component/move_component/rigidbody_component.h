@@ -24,7 +24,7 @@ private:
 	//! 空中の摩擦
 	float m_AirFriction;
 	//! 速度
-	Conv_XM::Vector3f m_Velocity;
+	Conv_XM::Vector3f m_Direction;
 
 	//! オブジェクトに接地しているかどうか
 	bool m_IsObjectGround;
@@ -43,13 +43,13 @@ public:
 
 	inline void SetIsUseGravity(bool flag) { m_IsUseGravity = flag; }
 
-	inline Conv_XM::Vector3f GetVelocity() const { return m_Velocity; }
-	inline void SetVelocity(const Conv_XM::Vector3f& velocity) { m_Velocity = velocity; }
-	inline void SetVelocityX(float velocity_x) { m_Velocity.x = velocity_x; }
-	inline void SetVelocityY(float velocity_y) { m_Velocity.y = velocity_y; }
-	inline void SetVelocityZ(float velocity_z) { m_Velocity.z = velocity_z; }
+	inline Conv_XM::Vector3f GetVelocity() const { return m_Direction; }
+	inline void SetDirection(const Conv_XM::Vector3f& velocity) { m_Direction = velocity; }
+	inline void SetVelocityX(float velocity_x) { m_Direction.x = velocity_x; }
+	inline void SetVelocityY(float velocity_y) { m_Direction.y = velocity_y; }
+	inline void SetVelocityZ(float velocity_z) { m_Direction.z = velocity_z; }
 
-	inline void PlusVelocity(const Conv_XM::Vector3f& velocity) { m_Velocity += velocity; }
+	inline void PlusVelocity(const Conv_XM::Vector3f& velocity) { m_Direction += velocity; }
 
 	inline void SetGroundFriction(float friction) { m_GroundFriction = friction; }
 	inline void SetAirFriction(float friction) { m_AirFriction = friction; }

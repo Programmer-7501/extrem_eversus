@@ -1,3 +1,8 @@
+/**
+ * @file astar.h
+ * @brief A*‚ÌŽÀ‘•
+ */
+
 #pragma once
 
 #include"weighted_graph.h"

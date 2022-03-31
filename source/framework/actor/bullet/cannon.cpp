@@ -29,7 +29,7 @@ namespace CannonData
 }
 
 Cannon::Cannon()
-	:m_Velocity(0.0f,0.0f,0.0f)
+	:m_UseParticleName(ParticleManagerData::k_BeamParticleName)
 {
 	m_ActorType = Actor::ACTORTYPE_CANNON;
 }
@@ -54,17 +54,17 @@ void Cannon::SetActive(bool flag)
 	// ポジション入力
 	m_Emitter.EmitterPosition = m_Position;
 	ParticleManager& particleManager = ParticleManager::GetInstance();
-	particleManager.UpdateParticleEmitterConstantBuffer(m_ParticleEmitterIndex, m_Emitter);
-	particleManager.SpawnParticle(m_UseParticleName, m_ParticleEmitterIndex);
+	particleManager.UpdateParticleEmitterConstantBuffer(m_Emitter.MyIndex, m_Emitter);
+	particleManager.SpawnParticle(m_UseParticleName, m_Emitter.MyIndex);
 }
 
-void Cannon::SetVelocity(const Conv_XM::Vector3f & velocity)
+void Cannon::SetDirection(const Conv_XM::Vector3f & direction)
 {
-	m_Emitter.ParticleVelocity = velocity;
-	m_Velocity = velocity;
-	m_Velocity = DirectX::XMVector3Normalize(m_Velocity);
+	m_Emitter.ParticleVelocity = direction;
+	m_Direction = direction;
+	m_Direction = DirectX::XMVector3Normalize(m_Direction);
 
-	Conv_XM::Vector4f q = Conv_XM::Vector4f::MakeQuaternionFromVec3(m_Velocity);
+	Conv_XM::Vector4f q = Conv_XM::Vector4f::MakeQuaternionFromVec3(m_Direction);
 	SetQuaternion(q);
 	ComputeWorldTransform();
 }
@@ -113,14 +113,14 @@ void Cannon::InitActor()
 
 	ParticleManager& particleManager = ParticleManager::GetInstance();
 	// エミッターを登録
-	m_ParticleEmitterIndex = particleManager.RegisterParticleEmitter(m_Emitter);
+	m_Emitter.MyIndex = particleManager.RegisterParticleEmitter(m_Emitter);
 }
 
 void Cannon::ProcessInputActor()
 {
 	//　パーティクルを発生させる
 	ParticleManager& particleManager = ParticleManager::GetInstance();
-	particleManager.SpawnParticle(m_UseParticleName, m_ParticleEmitterIndex);
+	particleManager.SpawnParticle(m_UseParticleName, m_Emitter.MyIndex);
 }
 
 void Cannon::UpdateActor()

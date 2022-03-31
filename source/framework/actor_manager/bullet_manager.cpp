@@ -48,7 +48,7 @@ class Bullet* BulletManager::UseBullet(class MobileSuit* target, const Conv_XM::
 			// ポジション入力
 			bullet->SetPosition(position);
 			// 速度入力
-			bullet->SetVelocity(velocity);
+			bullet->SetDirection(velocity);
 			// ターゲット入力
 			bullet->SetTargetMobileSuit(target);
 			// アクティブ処理
@@ -151,7 +151,6 @@ void BulletManager::Init()
 			continue;
 		}
 		bullet->Init();
-		bullet->SetUseParticleName(ParticleManagerData::k_BeamParticleName);
 		bullet->SetActive(false);
 	}
 }

@@ -77,7 +77,7 @@ void MobileSuitStateBendBackWard::OnEnter()
 		return;
 	}
 
-	m_RigidBodyComponent->SetVelocity(Conv_XM::Vector3f(0.0f, 0.0f, 0.0f));
+	m_RigidBodyComponent->SetDirection(Conv_XM::Vector3f(0.0f, 0.0f, 0.0f));
 	m_RigidBodyComponent->SetIsUseGravity(false);
 }
 

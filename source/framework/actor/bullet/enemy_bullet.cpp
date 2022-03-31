@@ -3,13 +3,11 @@
 #include "enemy_bullet.h"
 #include"../../component/move_component/rigidbody_component.h"
 #include"../../actor/mobilesuit/mobilesuit.h"
-#include"../../../particle/particle_manager.h"
 #include"../../component/collision_component/obb_collision_component.h"
 #include"../../component/mesh_component/debug/obb_debug_view_component.h"
 #include"../../scene/scene_manager.h"
 #include"../../scene/scene.h"
 #include"../../scene_function/scene_collision_manager.h"
-#include"../../actor_manager/effect_manager.h"
 
 
 EnemyBullet::EnemyBullet()

@@ -11,6 +11,7 @@
 #include"../../component/mesh_component/debug/aabb_debug_view_component.h"
 #include"../../actor_manager/effect_manager.h"
 #include"../../../system/audio_manager.h"
+#include"../../component/mobilesuit_state_component/mobilesuit_state_component.h"
 
 namespace MobileSuitData
 {
@@ -22,6 +23,9 @@ namespace MobileSuitData
 
 	//! デフォルトのコスト
 	static constexpr int k_DefaultCost = 2000;
+
+	//! デフォルトのライフ
+	static constexpr int k_DefaultLife = 600;
 
 	//! 爆発SE
 	static const char* ExplosionSE = "asset/sound/SE/ExplosionSE.wav";
@@ -48,8 +52,12 @@ MobileSuit::MobileSuit()
 	, m_ArousalComponent(nullptr)
 	, m_OBBCollisionComponent(nullptr)
 	, m_AABBCollisionComponent(nullptr)
+	, m_StateComponent(nullptr)
 	, m_IsBoostDash(false)
 	, m_BeamRifleBulletManager(nullptr)
+	, m_CannonManager(nullptr)
+	, m_BazookaManager(nullptr)
+	, m_AlliesMobileSuit(nullptr)
 	, m_EnemyMobileSuit001(nullptr)
 	, m_EnemyMobileSuit002(nullptr)
 	, m_TargetNum(0)
@@ -77,7 +85,7 @@ MobileSuit::~MobileSuit()
 
 void MobileSuit::Reset()
 {
-	m_LifeComponent->SetLife(600);
+	m_LifeComponent->SetLife(MobileSuitData::k_DefaultLife);
 }
 
 void MobileSuit::BeamRifleShot()
@@ -154,7 +162,13 @@ void MobileSuit::LoadActor()
 
 void MobileSuit::InitActor()
 {
+	if (m_LifeComponent == nullptr)
+	{
+		Logger::GetInstance().SetLog("MobileSuit::InitActor m_LifeComponentがnullptr");
+		return;
+	}
 
+	m_LifeComponent->SetMaxLife(MobileSuitData::k_DefaultLife);
 }
 
 void MobileSuit::UpdateActor()
@@ -163,9 +177,25 @@ void MobileSuit::UpdateActor()
 	{
 		SetActive(false);
 		m_MobileSuitEffectManager->UseEffect(m_Position);
+		m_StateComponent->ChangeMobileSuitState("MobileSuitStateAirIdle");
+		m_RigidBodyComponent->SetIsGround(false);
 		// 音を鳴らす
 		AudioManager& audioManager = AudioManager::GetInstance();
 		audioManager.Play("asset/sound/SE/ExplosionSE.wav", false);
+
+		m_IsBoostDash = false;
+		m_BeamRifleCountFrame = 0;
+		m_IsBeamRifleShot = false;
+		m_IsFinishBeamRifleShot = false;
+		m_BeamRifleCoolTime = 0;
+		m_IsLockOn = false;
+		m_DownFlag = false;
+		m_DownNum = 0.0f;
+		m_DownCount = 0.0f;
+		m_IsDamage = false;
+		m_DownNumCoolTime = 0;
+
+		return;
 	}
 
 	if (m_DownFlag == true)
@@ -191,5 +221,4 @@ void MobileSuit::UpdateActor()
 			}
 		}
 	}
-
 }

@@ -48,6 +48,9 @@ protected:
 	//! キャノンバレットマネージャー
 	class BulletManager* m_CannonBulletManager;
 
+	//! バズーカバレットマネージャー
+	class BulletManager* m_BazookaBulletManager;
+
 	//! エネミー001のポインタ
 	class MobileSuit* m_EnemyMobileSuit001;
 	//! エネミー002のポインタ
@@ -117,5 +120,10 @@ protected:
 	* @param[in] float(rotationLimit) 回転上限(degree)
 	*/
 	void RotationActor(const Conv_XM::Vector3f& cameraForward, const Conv_XM::Vector3f& actorForward, const Conv_XM::Vector2f& direction, float rotationLimit = 0.0f);
+
+	/**
+	* @brief エネミーに時期を向ける
+	*/
+	void RotateToEnemy();
 };
 

@@ -42,6 +42,7 @@
 #include"../../component/mobilesuit_state_component/character_ai_state/character_ai_state_move.h"
 #include"../../component/mobilesuit_state_component/character_ai_state/character_ai_state_start.h"
 #include"../../component/mobilesuit_state_component/character_ai_state/character_ai_state_attack.h"
+#include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_bazooka.h"
 
 #include"../gamemanager/cost_manager.h"
 
@@ -75,7 +76,6 @@ void Ally::UnloadModel()
 
 Ally::Ally()
 	:m_LockOnCameraComponent(nullptr)
-	, m_StateComponent(nullptr)
 	, m_AnimationModelComponent(nullptr)
 	, m_BoostDashOffsetRotation(DirectX::XMQuaternionIdentity())
 	, m_OffsetRotation(DirectX::XMQuaternionIdentity())
@@ -187,6 +187,8 @@ void Ally::LoadActor()
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateDown>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateReturn>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateJumpStandby>();
+
+	m_StateComponent->CreateMobileSuitState<MobileSuitStateBazooka>();
 
 	MobileSuitAIStateComponent* mobile = dynamic_cast<MobileSuitAIStateComponent*>(m_StateComponent);
 	mobile->CreateCharacterState<CharcterAIStateMove>();

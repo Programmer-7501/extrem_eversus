@@ -322,7 +322,7 @@ void ParticleManager::UpdateParticleEmitterArrayConstantBuffer()
 	}
 }
 
-void ParticleManager::CreateParticle(const std::string & particleName,int maxParticleNum, ID3D11ShaderResourceView* srv)
+void ParticleManager::CreateParticle(const std::string & particleName,int maxParticleNum, ID3D11ShaderResourceView* srv, bool invisibleAddFlag)
 {
 	// パーティクル作成
 	Particle* particle = new Particle(maxParticleNum);
@@ -337,9 +337,11 @@ void ParticleManager::CreateParticle(const std::string & particleName,int maxPar
 	particle->SetTexture(srv);
 	// 初期化処理
 	particle->Init();
+	// 加算合成フラグ
+	particle->SetBlendStateInvisibleAddFlag(invisibleAddFlag);
+
 	// 登録
 	m_ParticleMap.emplace(particleName, particle);
-
 }
 
 void ParticleManager::UpdateParticleEmitterConstantBuffer(int emitterIndex, const CBufferData::ParticleEmitter & particleEmitter)

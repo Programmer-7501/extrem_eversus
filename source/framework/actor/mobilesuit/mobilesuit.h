@@ -41,6 +41,9 @@ protected:
 	//! オブジェクトとの当たり判定コリジョン
 	class AABBCollisionComponent* m_AABBCollisionComponent;
 
+	//! ステートコンポーネント
+	class MobileSuitStateComponent* m_StateComponent;
+
 	//! ブーストダッシュ中か否か
 	bool m_IsBoostDash;
 
@@ -49,6 +52,9 @@ protected:
 
 	//! キャノンマネージャー
 	class BulletManager* m_CannonManager;
+
+	//! バズーカマネージャー
+	class BulletManager* m_BazookaManager;
 
 	//! 味方
 	class MobileSuit* m_AlliesMobileSuit;
@@ -129,6 +135,9 @@ public:
 
 	inline class BulletManager* GetCannonBulletManager() const { return m_CannonManager; }
 	inline void SetCannonBulletManager(class BulletManager* cannonBulletManager) { m_CannonManager = cannonBulletManager; }
+
+	inline class BulletManager* GetBazookaBulletManager() const { return m_BazookaManager; }
+	inline void SetBazookaBulletManager(class BulletManager* bazookaBulletManager) { m_BazookaManager = bazookaBulletManager; }
 
 	inline void SetAllies(class MobileSuit* allies001) { m_AlliesMobileSuit = allies001; }
 	inline class MobileSuit* GetAlliesMobileSuit() const { return m_AlliesMobileSuit; }

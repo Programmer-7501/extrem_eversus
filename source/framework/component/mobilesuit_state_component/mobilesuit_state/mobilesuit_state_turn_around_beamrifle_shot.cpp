@@ -134,7 +134,7 @@ void MobileSuitStateTurnAroundBeamRifleShot::OnEnter()
 	}
 
 	// 速度を0にする
-	m_RigidBodyComponent->SetVelocity(Conv_XM::Vector3f(0.0f, 0.0f, 0.0f));
+	m_RigidBodyComponent->SetDirection(Conv_XM::Vector3f(0.0f, 0.0f, 0.0f));
 	m_RigidBodyComponent->SetIsUseGravity(false);
 
 	// 敵の方向に向ける
@@ -142,6 +142,9 @@ void MobileSuitStateTurnAroundBeamRifleShot::OnEnter()
 
 	// 動かさない
 	m_AnimationComponent->SetCurrentAnimationBlendToNextAnimation("beamrifle", 20);
+
+	m_BoostDashCount = MobileSuitStateTurnAroundBeamRifleShotData::k_BoostDashInputTime + 1;
+	m_FrameCount = 0;
 }
 
 void MobileSuitStateTurnAroundBeamRifleShot::OnExit()
@@ -152,59 +155,4 @@ void MobileSuitStateTurnAroundBeamRifleShot::OnExit()
 		return;
 	}
 	m_RigidBodyComponent->SetIsUseGravity(true);
-}
-
-void MobileSuitStateTurnAroundBeamRifleShot::RotateToEnemy()
-{
-	if (m_MobileSuit == nullptr || m_EnemyMobileSuit001 == nullptr || m_EnemyMobileSuit002 == nullptr)
-	{
-		Logger::GetInstance().SetLog("MobileSuitStateBeamRifleShot::OnExit nullptr");
-		return;
-	}
-
-	Conv_XM::Vector3f enemyPosition, dif;
-	if (m_MobileSuit->GetTargetNumber() == 0)
-	{
-		enemyPosition = m_EnemyMobileSuit001->GetPosition();
-	}
-	else
-	{
-		enemyPosition = m_EnemyMobileSuit002->GetPosition();
-	}
-	enemyPosition.y = 0.0f;
-
-	Conv_XM::Vector3f myPosition = m_MobileSuit->GetPosition();
-	myPosition.y = 0.0f;
-
-	dif = enemyPosition - myPosition;
-	dif = DirectX::XMVector3Normalize(dif);
-
-
-	//内積と角度を算出
-	float dot = Conv_XM::Vector3f::Dot(Conv_XM::Vector3f::WorldForward, dif);
-	Conv_XM::Vector3f xmangle = DirectX::XMVector3AngleBetweenNormals(Conv_XM::Vector3f::WorldForward, dif);
-	float angle = xmangle.x;
-
-	Conv_XM::Vector4f NextVecQuaternion;
-
-	// 同じ方角なら
-	if (dot > 0.9999f)
-	{
-		NextVecQuaternion = DirectX::XMQuaternionIdentity();
-	}
-	else if (dot < -0.9999f)
-	{
-		NextVecQuaternion = DirectX::XMQuaternionRotationAxis((DirectX::XMVECTOR)Conv_XM::Vector3f::WorldUp, DirectX::XM_PI);
-	}
-	else
-	{
-		//外積を求め回転軸を求める
-		Conv_XM::Vector3f axis = Conv_XM::Vector3f::Cross(Conv_XM::Vector3f::WorldForward, dif);
-
-		//クォータニオンを求める
-		NextVecQuaternion = DirectX::XMQuaternionRotationAxis(axis, angle);
-	}
-
-	//求めたクォータニオンを合成する
-	m_MobileSuit->SetQuaternion(NextVecQuaternion);
 }

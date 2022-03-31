@@ -120,7 +120,7 @@ public:
 	* @param[in] int(maxParticleNum) パーティクルの最大数
 	* @param[in] ID3D11ShaderResourceView*(srv) パーティクルに使用するテクスチャ
 	*/
-	void CreateParticle(const std::string& particleName,int maxParticleNum, ID3D11ShaderResourceView* srv);
+	void CreateParticle(const std::string& particleName,int maxParticleNum, ID3D11ShaderResourceView* srv, bool invisibleAddFlag = true);
 
 	/**
 	* @brief エミッターのコンスタントバッファの更新

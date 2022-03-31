@@ -1,9 +1,9 @@
 
 #include"../../../system/main.h"
-#include "beamrifle_landing_effect.h"
+#include "bazooka_landing_effect.h"
 #include"../../../particle/particle_manager.h"
 
-namespace BeanRifleLandingEffectData
+namespace BazookaLandingEffectData
 {
 	// 終了フレーム
 	static constexpr int k_DefaultFinishFrame = 4;
@@ -22,15 +22,15 @@ namespace BeanRifleLandingEffectData
 	static const CBufferData::EmitterType k_ParticleEmitterType = CBufferData::ET_SPHERE;
 }
 
-BeanRifleLandingEffect::BeanRifleLandingEffect()
+BazookaLandingEffect::BazookaLandingEffect()
 {
 }
 
-BeanRifleLandingEffect::~BeanRifleLandingEffect()
+BazookaLandingEffect::~BazookaLandingEffect()
 {
 }
 
-void BeanRifleLandingEffect::SetActive(bool flag)
+void BazookaLandingEffect::SetActive(bool flag)
 {
 	// 入力
 	m_Active = flag;
@@ -45,36 +45,36 @@ void BeanRifleLandingEffect::SetActive(bool flag)
 	}
 }
 
-void BeanRifleLandingEffect::InitActor()
+void BazookaLandingEffect::InitActor()
 {
 	// エフェクトモード設定
 	m_EffectMode = EFFECTMODE_ONCE;
 
 	// フィニッシュフレームカウントを設定
-	SetFinishFrame(BeanRifleLandingEffectData::k_DefaultFinishFrame);
+	SetFinishFrame(BazookaLandingEffectData::k_DefaultFinishFrame);
 
 	// エミッター設定
-	m_Emitter.Color = BeanRifleLandingEffectData::k_DefaultParticleColor;
+	m_Emitter.Color = BazookaLandingEffectData::k_DefaultParticleColor;
 	m_Emitter.EmitterPosition = m_Position;
-	m_Emitter.EmitterType = BeanRifleLandingEffectData::k_ParticleEmitterType;
+	m_Emitter.EmitterType = BazookaLandingEffectData::k_ParticleEmitterType;
 	m_Emitter.IsUse = 1;
-	m_Emitter.MaxSpawnParticlesThisFrame = BeanRifleLandingEffectData::k_DefaultSpawnNum;
-	m_Emitter.ParticleLifeSpan = BeanRifleLandingEffectData::k_DefaultLife;
-	m_Emitter.Size = BeanRifleLandingEffectData::k_ParticleSize;
-	m_Emitter.Speed = BeanRifleLandingEffectData::k_DefaultSpeed;
+	m_Emitter.MaxSpawnParticlesThisFrame = BazookaLandingEffectData::k_DefaultSpawnNum;
+	m_Emitter.ParticleLifeSpan = BazookaLandingEffectData::k_DefaultLife;
+	m_Emitter.Size = BazookaLandingEffectData::k_ParticleSize;
+	m_Emitter.Speed = BazookaLandingEffectData::k_DefaultSpeed;
 
 	ParticleManager& particleManager = ParticleManager::GetInstance();
 	// エミッターを登録
 	m_Emitter.MyIndex = particleManager.RegisterParticleEmitter(m_Emitter);
 }
 
-void BeanRifleLandingEffect::ProcessInputActor()
+void BazookaLandingEffect::ProcessInputActor()
 {
 	ParticleManager& particleManager = ParticleManager::GetInstance();
 	particleManager.SpawnParticle(ParticleManagerData::k_BeamParticleName, m_Emitter.MyIndex);
 }
 
-void BeanRifleLandingEffect::UpdateActor()
+void BazookaLandingEffect::UpdateActor()
 {
 	// エフェクト更新
 	Effect::UpdateActor();

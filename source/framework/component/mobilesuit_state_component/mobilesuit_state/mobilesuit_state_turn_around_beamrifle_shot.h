@@ -58,10 +58,6 @@ public:
 	{
 		return "MobileSuitStateTurnAroundBeamRifleShot";
 	}
-private:
-	/**
-	* @brief エネミーに時期を向ける
-	*/
-	void RotateToEnemy();
+
 
 };

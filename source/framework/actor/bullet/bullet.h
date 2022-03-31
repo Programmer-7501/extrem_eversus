@@ -23,34 +23,27 @@ protected:
 	//! 速度
 	float m_Speed;
 
-	//! 使用パーティクルネーム
-	std::string m_UseParticleName;
-
-	//! パーティクルエミッター構造体
-	CBufferData::ParticleEmitter m_Emitter;
-
-	//! パーティクルエミッターインデックス
-	int m_ParticleEmitterIndex;
-
 	//! フレームカウント
 	int m_FrameCount;
 
 	//! 終了フレーム
 	int m_FinishFrame;
 
-	//! エフェクトマネージャー
-	class EffectManager* m_LandingEffectManager;
-
 	//! 狙っている敵
 	class MobileSuit* m_TargetMobileSuit;
 
-	//! 速度
-	Conv_XM::Vector3f m_Velocity;
+	//! 向き
+	Conv_XM::Vector3f m_Direction;
 
 	//! 追尾フラグ
 	bool m_TargetFlag;
 
+	//! 回転上限
 	float m_RotationLimit;
+
+	//! エフェクトマネージャー
+	class EffectManager* m_LandingEffectManager;
+
 public:
 	Bullet();
 	~Bullet();
@@ -58,9 +51,9 @@ public:
 
 	/**
 	* @brief 速度のセット
-	* @param[in] const Conv_XM::Vector3f&(velocity) 速度
+	* @param[in] const Conv_XM::Vector3f&(direction) 方向
 	*/
-	virtual void SetVelocity(const Conv_XM::Vector3f& velocity);
+	virtual void SetDirection(const Conv_XM::Vector3f& direction);
 
 	/**
 	* @brief 終了フレームのセット
@@ -69,18 +62,14 @@ public:
 	inline void SetFinishFrame(int finishFrame) { m_FinishFrame = finishFrame; }
 
 	/**
-	* @brief 使用パーティクルの名前のセット
-	* @param[in] const std::string&(particleName) 使用パーティクルの名前
-	*/
-	void SetUseParticleName(const std::string& particleName) { m_UseParticleName = particleName; }
-
-	/**
 	* @brief アクティブ処理
 	*/
 	virtual void SetActive(bool flag)override;
 
-	inline void SetLandingEffectManager(class EffectManager* landingEffectManager) { m_LandingEffectManager = landingEffectManager; }
-
+	/**
+	* @brief ターゲットモビルスーツの設定
+	* @param[in] class MobileSuit*(mobileSuit) ターゲットのモビルスーツ
+	*/
 	inline void SetTargetMobileSuit(class MobileSuit* mobileSuit) 
 	{
 		if (mobileSuit == nullptr)
@@ -93,6 +82,12 @@ public:
 			m_TargetMobileSuit = mobileSuit;
 		}
 	}
+
+
+	/**
+	* @brief 着弾エフェクト設定
+	*/
+	inline void SetLandingEffectManager(class EffectManager* landingEffectManager) { m_LandingEffectManager = landingEffectManager; }
 protected:
 
 	/**

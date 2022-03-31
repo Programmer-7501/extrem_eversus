@@ -28,6 +28,7 @@ MobileSuitState::MobileSuitState(MobileSuitStateComponent * Owner)
 	, m_MobileSuit(nullptr)
 	, m_BeamRifleBulletManager(nullptr)
 	, m_CannonBulletManager(nullptr)
+	, m_BazookaBulletManager(nullptr)
 	, m_EnemyMobileSuit001(nullptr)
 	, m_EnemyMobileSuit002(nullptr)
 	, m_TargetNum(0)
@@ -75,7 +76,6 @@ bool MobileSuitState::GetData()
 		return false;
 	}
 
-
 	// モビルスーツアクター取得
 	m_MobileSuit = dynamic_cast<MobileSuit*>(m_Owner->GetOwner());
 	if (m_MobileSuit == nullptr)
@@ -97,6 +97,14 @@ bool MobileSuitState::GetData()
 	if (m_CannonBulletManager == nullptr)
 	{
 		Logger::GetInstance().SetLog("MobileSuitState::GetData m_CannonBulletManagerがnullptr");
+		return false;
+	}
+
+	// バズーカバレットマネージャーを取得
+	m_BazookaBulletManager = m_MobileSuit->GetBazookaBulletManager();
+	if (m_BazookaBulletManager == nullptr)
+	{
+		Logger::GetInstance().SetLog("MobileSuitState::GetData m_BazookaBulletManagerがnullptr");
 		return false;
 	}
 
@@ -309,4 +317,59 @@ void MobileSuitState::RotationActor(const Conv_XM::Vector3f & cameraForward, con
 	Conv_XM::Vector4f myQuaternion = m_MobileSuit->GetQuaternion();
 	Conv_XM::Vector4f q = DirectX::XMQuaternionMultiply(myQuaternion, NextVecQuaternion);
 	m_MobileSuit->SetQuaternion(q);
+}
+
+void MobileSuitState::RotateToEnemy()
+{
+	if (m_MobileSuit == nullptr || m_EnemyMobileSuit001 == nullptr || m_EnemyMobileSuit002 == nullptr)
+	{
+		Logger::GetInstance().SetLog("MobileSuitStateBeamRifleShot::OnExit nullptr");
+		return;
+	}
+
+	Conv_XM::Vector3f enemyPosition, dif;
+	if (m_MobileSuit->GetTargetNumber() == 0)
+	{
+		enemyPosition = m_EnemyMobileSuit001->GetPosition();
+	}
+	else
+	{
+		enemyPosition = m_EnemyMobileSuit002->GetPosition();
+	}
+	enemyPosition.y = 0.0f;
+
+	Conv_XM::Vector3f myPosition = m_MobileSuit->GetPosition();
+	myPosition.y = 0.0f;
+
+	dif = enemyPosition - myPosition;
+	dif = DirectX::XMVector3Normalize(dif);
+
+
+	//内積と角度を算出
+	float dot = Conv_XM::Vector3f::Dot(Conv_XM::Vector3f::WorldForward, dif);
+	Conv_XM::Vector3f xmangle = DirectX::XMVector3AngleBetweenNormals(Conv_XM::Vector3f::WorldForward, dif);
+	float angle = xmangle.x;
+
+	Conv_XM::Vector4f NextVecQuaternion;
+
+	// 同じ方角なら
+	if (dot > 0.9999f)
+	{
+		NextVecQuaternion = DirectX::XMQuaternionIdentity();
+	}
+	else if (dot < -0.9999f)
+	{
+		NextVecQuaternion = DirectX::XMQuaternionRotationAxis((DirectX::XMVECTOR)Conv_XM::Vector3f::WorldUp, DirectX::XM_PI);
+	}
+	else
+	{
+		//外積を求め回転軸を求める
+		Conv_XM::Vector3f axis = Conv_XM::Vector3f::Cross(Conv_XM::Vector3f::WorldForward, dif);
+
+		//クォータニオンを求める
+		NextVecQuaternion = DirectX::XMQuaternionRotationAxis(axis, angle);
+	}
+
+	//求めたクォータニオンを合成する
+	m_MobileSuit->SetQuaternion(NextVecQuaternion);
 }

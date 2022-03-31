@@ -1,6 +1,6 @@
 /**
- * @file beamrifle_landing_effect.h
- * @brief ビームライフル着弾エフェクト
+ * @file bazooka_landing_effect.h
+ * @brief バズーカ着弾エフェクト
  */
 
 #pragma once
@@ -9,17 +9,17 @@
 #include"../../../directx/render_data/cbuffer_data.h"
 
  /**
- * @brief ビームライフル着弾エフェクトクラス
+ * @brief バズーカ着弾エフェクトクラス
  */
-class BeanRifleLandingEffect : public Effect
+class BazookaLandingEffect : public Effect
 {
 private:
 	//! パーティクルエミッター構造体
 	CBufferData::ParticleEmitter m_Emitter;
 
 public:
-	BeanRifleLandingEffect();
-	virtual ~BeanRifleLandingEffect() override;
+	BazookaLandingEffect();
+	virtual ~BazookaLandingEffect() override;
 
 	/**
 	* @brief アクティブ処理
@@ -28,17 +28,17 @@ public:
 private:
 
 	/**
-	* @brief ビームライフル着弾エフェクト独自の初期化処理
+	* @brief バズーカ着弾エフェクト独自の初期化処理
 	*/
 	virtual void InitActor() override;
 
 	/**
-	* @brief ビームライフル着弾エフェクト独自の入力処理
+	* @brief バズーカ着弾エフェクト独自の入力処理
 	*/
 	virtual void ProcessInputActor()override;
 
 	/**
-	* @brief ビームライフル着弾エフェクト独自の更新処理
+	* @brief バズーカ着弾エフェクト独自の更新処理
 	*/
 	virtual void UpdateActor()override;
 };

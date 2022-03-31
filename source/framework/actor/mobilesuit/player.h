@@ -52,9 +52,6 @@ private:
 	//! ロックオンカメラコンポーネント
 	class LockOnCameraComponent* m_LockOnCameraComponent;
 
-	//! ステートコンポーネント
-	class MobileSuitStateComponent* m_StateComponent;
-
 	//! ロックオンカーソルコンポーネント
 	class LockonCursolBillboardComponent* m_LockonCursolBillboardComponent;
 

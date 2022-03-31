@@ -118,9 +118,6 @@
     <Filter Include="framework\actor\ui\game_scene">
       <UniqueIdentifier>{2c4c9d0e-e233-472b-be0f-0d832a11b7ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="framework\actor\effect">
-      <UniqueIdentifier>{f98d1ded-2223-46a3-b110-d22551529129}</UniqueIdentifier>
-    </Filter>
     <Filter Include="framework\component\audio_component">
       <UniqueIdentifier>{4c87649b-34a7-498b-aba4-fa22b216d7bf}</UniqueIdentifier>
     </Filter>
@@ -171,6 +168,9 @@
     </Filter>
     <Filter Include="framework\component\camera_component">
       <UniqueIdentifier>{22679f18-9320-45c8-a2cd-1193cc1ed780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\actor\effect">
+      <UniqueIdentifier>{f98d1ded-2223-46a3-b110-d22551529129}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -689,6 +689,27 @@
     </ClCompile>
     <ClCompile Include="source\framework\component\mesh_component\debug\aabb_debug_view_component.cpp">
       <Filter>framework\component\mesh_component\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\bazooka.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\enemy_bazooka.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\beam_rifle.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\enemy_beam_rifle.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\bullet\bullet_data.cpp">
+      <Filter>framework\actor\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\actor\effect\bazooka_landing_effect.cpp">
+      <Filter>framework\actor\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_bazooka.cpp">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1231,6 +1252,27 @@
     </ClInclude>
     <ClInclude Include="source\framework\component\mesh_component\debug\aabb_debug_view_component.h">
       <Filter>framework\component\mesh_component\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\bazooka.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\enemy_bazooka.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\beam_rifle.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\enemy_beam_rifle.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\bullet\bullet_data.h">
+      <Filter>framework\actor\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\actor\effect\bazooka_landing_effect.h">
+      <Filter>framework\actor\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\framework\component\mobilesuit_state_component\mobilesuit_state\mobilesuit_state_bazooka.h">
+      <Filter>framework\component\mobilesuit_state_component\mobilesuit_state</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -41,6 +41,11 @@ void SceneCollisionManager::Update()
 			continue;
 		}
 
+		if (m_MobileSuits[i]->GetActive() == false)
+		{
+			continue;
+		}
+
 		// ポジション取得
 		Conv_XM::Vector3f position = m_MobileSuits[i]->GetPosition();
 		// アクターの位置にあるメッシュフィールドの高さを取得

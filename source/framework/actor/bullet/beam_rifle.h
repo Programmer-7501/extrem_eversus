@@ -1,6 +1,6 @@
 /**
- * @file cannon.h
- * @brief キャノン
+ * @file beam_rifle.h
+ * @brief ビームライフル
  */
 
 #pragma once
@@ -8,34 +8,20 @@
 #include"bullet.h"
 
  /**
- * @brief キャノンクラス
+ * @brief ビームライフル
  */
-class Cannon : public Bullet
+class BeamRifle : public Bullet
 {
-private:
+protected:
 	//! 使用パーティクルネーム
 	std::string m_UseParticleName;
 
 	//! パーティクルエミッター構造体
 	CBufferData::ParticleEmitter m_Emitter;
 
-	//! エフェクトマネージャー
-	class EffectManager* m_LandingEffectManager;
-
 public:
-	Cannon();
-	~Cannon();
-
-	/**
-	* @brief アクティブ処理
-	*/
-	virtual void SetActive(bool flag)override;
-
-	/**
-	* @brief 速度のセット
-	* @param[in] const Conv_XM::Vector3f&(velocity) 速度
-	*/
-	virtual void SetDirection(const Conv_XM::Vector3f& velocity) override;
+	BeamRifle();
+	~BeamRifle();
 
 	/**
 	* @brief 使用パーティクルの名前のセット
@@ -46,22 +32,22 @@ public:
 protected:
 
 	/**
-	* @brief キャノン独自の読み込み処理
+	* @brief ビームライフル独自の読み込み処理
 	*/
 	virtual void LoadActor() override;
 
 	/**
-	* @brief キャノン独自の初期化処理
+	* @brief ビームライフル独自の初期化処理
 	*/
 	virtual void InitActor() override;
 
 	/**
-	* @brief キャノン独自の入力処理
+	* @brief ビームライフル独自の入力処理
 	*/
 	virtual void ProcessInputActor()override;
 
 	/**
-	* @brief キャノン独自の更新処理
+	* @brief ビームライフル独自の更新処理
 	*/
 	virtual void UpdateActor()override;
 

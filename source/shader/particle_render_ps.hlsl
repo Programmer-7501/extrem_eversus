@@ -8,4 +8,10 @@ void main(in PARTICLE_PS_IN In, out float4 outDiffuse : SV_Target)
 {
     outDiffuse = g_Texture.Sample(g_SamplerState, In.TexCoord);
     outDiffuse *= In.Color;
+    
+     //ƒ¿ƒeƒXƒg
+    if (outDiffuse.a < 0.1)
+    {
+        discard;
+    }
 }

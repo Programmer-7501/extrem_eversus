@@ -93,6 +93,9 @@ private:
 
 	//! 更新ディスパッチ数
 	int m_Dispatch;
+
+	//! 加算合成フラグ
+	bool m_BlendStateInvisibleAddFlag;
 public:
 
 	/**
@@ -148,6 +151,12 @@ public:
 	* @return int パーティクルの最大数
 	*/
 	inline int GetMaxParticleNumber() const { return m_MaxParticleNum; }
+
+	/**
+	* @brief 加算合成フラグセット
+	* @param[in] bool(flag) 加算合成フラグ
+	*/
+	inline void SetBlendStateInvisibleAddFlag(bool flag) { m_BlendStateInvisibleAddFlag = flag; }
 private:
 
 	/**

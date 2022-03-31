@@ -65,7 +65,7 @@ void MobileSuitStateNKakutouFirst::ProcessInput()
 	dif = enemyPosition - myPosition;
 	dif = DirectX::XMVector3Normalize(dif);
 
-	m_RigidBodyComponent->SetVelocity(dif * m_BoostSpeed);
+	m_RigidBodyComponent->SetDirection(dif * m_BoostSpeed);
 	// ブーストを消費する
 	m_BoostComponent->UseBoost(m_UseBoostNum);
 
@@ -116,7 +116,7 @@ void MobileSuitStateNKakutouFirst::OnEnter()
 
 	m_CountFrame = 0;
 
-	m_RigidBodyComponent->SetVelocity(Conv_XM::Vector3f(0.0f, 0.1f, 0.0f));
+	m_RigidBodyComponent->SetDirection(Conv_XM::Vector3f(0.0f, 0.1f, 0.0f));
 	m_RigidBodyComponent->SetIsGround(false);
 	m_RigidBodyComponent->SetIsUseGravity(false);
 

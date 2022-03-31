@@ -9,7 +9,6 @@
 #include"../../scene/scene_manager.h"
 #include"../../scene/scene.h"
 #include"../../scene_function/scene_collision_manager.h"
-#include"../../actor_manager/effect_manager.h"
 
 namespace BulletData
 {
@@ -19,34 +18,21 @@ namespace BulletData
 	//! デフォルトの終了フレーム
 	static constexpr int k_DefaultFinishFrame = 300;
 
-	//! 弾の色
-	static const Conv_XM::Vector4f k_DefaultParticleColor = Conv_XM::Vector4f(1.0f, 0.3f, 0.8f, 1.0f);
-	//! 1フレーム中に発生させるパーティクル数
-	static constexpr int k_DefaultSpawnNum = 2;
-	//! ライフ
-	static constexpr float k_DefaultLife = 5.0f;
-	//! パーティクルサイズ
-	static const Conv_XM::Vector2f k_ParticleSize = Conv_XM::Vector2f(1.0f, 1.0f);
-	//! 使用エミッタータイプ
-	static const CBufferData::EmitterType k_ParticleEmitterType = CBufferData::ET_SPHERE;
-
 	//! 最大回転量
-	static constexpr float k_MaxRotate = 0.25f;
+	static constexpr float k_DefaultMaxRotate = 0.25f;
 }
 
 Bullet::Bullet()
 	: m_RigidBodyComponent(nullptr)
 	, m_OBBCollisionComponent(nullptr)
 	, m_Speed(BulletData::k_DefaultSpeed)
-	, m_Emitter{}
-	, m_ParticleEmitterIndex(-1)
 	, m_FrameCount(0)
 	, m_FinishFrame(BulletData::k_DefaultFinishFrame)
-	, m_LandingEffectManager(nullptr)
 	, m_TargetMobileSuit(nullptr)
-	, m_Velocity(0.0f,0.0f,0.0f)
+	, m_Direction(0.0f,0.0f,0.0f)
 	, m_TargetFlag(false)
-	, m_RotationLimit(BulletData::k_MaxRotate)
+	, m_RotationLimit(BulletData::k_DefaultMaxRotate)
+	, m_LandingEffectManager(nullptr)
 {
 	m_ActorType = Actor::ACTORTYPE_PLAYER_BULLET;
 }
@@ -55,7 +41,7 @@ Bullet::~Bullet()
 {
 }
 
-void Bullet::SetVelocity(const Conv_XM::Vector3f & direction)
+void Bullet::SetDirection(const Conv_XM::Vector3f & direction)
 {
 	if (m_RigidBodyComponent == nullptr)
 	{
@@ -63,9 +49,9 @@ void Bullet::SetVelocity(const Conv_XM::Vector3f & direction)
 		return;
 	}
 
-	m_Velocity = DirectX::XMVector3Normalize(direction);
+	m_Direction = DirectX::XMVector3Normalize(direction);
 
-	m_RigidBodyComponent->SetVelocity(m_Velocity * m_Speed);
+	m_RigidBodyComponent->SetDirection(m_Direction * m_Speed);
 }
 
 void Bullet::SetActive(bool flag)
@@ -131,19 +117,6 @@ void Bullet::InitActor()
 	m_RigidBodyComponent->SetGravity(0.0f);
 	m_RigidBodyComponent->SetAirFriction(0.0f);
 	m_RigidBodyComponent->SetIsGround(false);
-
-	m_Emitter.Color = BulletData::k_DefaultParticleColor;
-	m_Emitter.EmitterPosition = m_Position;
-	m_Emitter.EmitterType = BulletData::k_ParticleEmitterType;
-	m_Emitter.IsUse = 1;
-	m_Emitter.MaxSpawnParticlesThisFrame = BulletData::k_DefaultSpawnNum;
-	m_Emitter.ParticleLifeSpan = BulletData::k_DefaultLife;
-	m_Emitter.Size = BulletData::k_ParticleSize;
-	m_Emitter.Speed = 0.001f;
-
-	ParticleManager& particleManager = ParticleManager::GetInstance();
-	// エミッターを登録
-	m_ParticleEmitterIndex = particleManager.RegisterParticleEmitter(m_Emitter);
 }
 
 void Bullet::ProcessInputActor()
@@ -153,12 +126,6 @@ void Bullet::ProcessInputActor()
 	{
 		TargetChase();
 	}
-
-	// パーティクルを生成させる
-	m_Emitter.EmitterPosition = m_Position;
-	ParticleManager& particleManager = ParticleManager::GetInstance();
-	particleManager.UpdateParticleEmitterConstantBuffer(m_ParticleEmitterIndex, m_Emitter);
-	particleManager.SpawnParticle(m_UseParticleName, m_ParticleEmitterIndex);
 }
 
 void Bullet::UpdateActor()
@@ -176,17 +143,6 @@ void Bullet::UpdateActor()
 void Bullet::CollisionDetected(class Actor* coleObj)
 {
 	UNREFERENCED_PARAMETER(coleObj);
-
-	// 非アクティブ状態にする
-	SetActive(false);
-
-	// 着弾エフェクトを発生させる
-	if (m_LandingEffectManager == nullptr)
-	{
-		Logger::GetInstance().SetLog("Bullet::CollisionDetected m_LandingEffectManagerがnullptr");
-		return;
-	}
-	m_LandingEffectManager->UseEffect(m_Position);
 }
 
 void Bullet::TargetChase()
@@ -205,7 +161,7 @@ void Bullet::TargetChase()
 
 	// 速度の単位ベクトル取得
 	Conv_XM::Vector3f velDir;
-	velDir = DirectX::XMVector3Normalize(m_Velocity);
+	velDir = DirectX::XMVector3Normalize(m_Direction);
 
 	//0ベクトルかどうかエラーチェック
 	float error = Conv_XM::Vector3f::LengthSq(myPosToTargetVec);
@@ -254,11 +210,11 @@ void Bullet::TargetChase()
 			}
 		}
 
-		m_Velocity = DirectX::XMVector3Rotate(m_Velocity, NextVecQuaternion);
+		m_Direction = DirectX::XMVector3Rotate(m_Direction, NextVecQuaternion);
 
-		m_Velocity = DirectX::XMVector3Normalize(m_Velocity);
+		m_Direction = DirectX::XMVector3Normalize(m_Direction);
 
 		// リジッドボディに速度を入力する
-		m_RigidBodyComponent->SetVelocity(m_Velocity * m_Speed);
+		m_RigidBodyComponent->SetDirection(m_Direction * m_Speed);
 	}
 }

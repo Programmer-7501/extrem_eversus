@@ -23,7 +23,7 @@ RigidBodyComponent::RigidBodyComponent(Actor * owner)
 	, m_Gravity(RigidBodyData::k_DefaultGravity)
 	, m_GroundFriction(RigidBodyData::k_DefaultGroundFriction)
 	, m_AirFriction(RigidBodyData::k_DefaultAirFriction)
-	, m_Velocity(0.0f,0.0f,0.0f)
+	, m_Direction(0.0f,0.0f,0.0f)
 	, m_IsObjectGround(false)
 	, m_IsMobileSuit(false)
 {
@@ -48,20 +48,20 @@ void RigidBodyComponent::Update()
 	// 重力、摩擦を加える
 	if (m_IsGround == false && m_IsUseGravity == true)
 	{
-		m_Velocity.y -= m_Gravity;
-		m_Velocity.x *= (1.0f - m_AirFriction);
-		m_Velocity.z *= (1.0f - m_AirFriction);
+		m_Direction.y -= m_Gravity;
+		m_Direction.x *= (1.0f - m_AirFriction);
+		m_Direction.z *= (1.0f - m_AirFriction);
 	}
 	else
 	{
-		m_Velocity.x *= (1.0f - m_GroundFriction);
-		m_Velocity.z *= (1.0f - m_GroundFriction);
+		m_Direction.x *= (1.0f - m_GroundFriction);
+		m_Direction.z *= (1.0f - m_GroundFriction);
 	}
 
 	// 速度をクランプする
-	m_Velocity = DirectX::XMVectorClamp(m_Velocity, -(RigidBodyData::k_MaxSpeed), RigidBodyData::k_MaxSpeed);
+	m_Direction = DirectX::XMVectorClamp(m_Direction, -(RigidBodyData::k_MaxSpeed), RigidBodyData::k_MaxSpeed);
 
-	position += m_Velocity;
+	position += m_Direction;
 
 	// モビルスーツなら画面から出ないようにクランプする
 	if(m_IsMobileSuit == true)

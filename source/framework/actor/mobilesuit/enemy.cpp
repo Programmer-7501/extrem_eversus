@@ -41,6 +41,7 @@
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_turn_around_beamrifle_shot.h"
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_down.h"
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_return.h"
+#include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_bazooka.h"
 #include"../../component/mobilesuit_state_component/mobilesuit_ai_state_component.h"
 #include"../../component/mobilesuit_state_component/character_ai_state/character_ai_state_move.h"
 #include"../../component/mobilesuit_state_component/character_ai_state/character_ai_state_start.h"
@@ -77,7 +78,6 @@ void Enemy::UnloadModel()
 
 Enemy::Enemy()
 	:m_LockOnCameraComponent(nullptr)
-	, m_StateComponent(nullptr)
 	, m_AnimationModelComponent(nullptr)
 	, m_BoostDashOffsetRotation(DirectX::XMQuaternionIdentity())
 	, m_OffsetRotation(DirectX::XMQuaternionIdentity())
@@ -166,6 +166,8 @@ void Enemy::LoadActor()
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateDown>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateReturn>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateJumpStandby>();
+
+	m_StateComponent->CreateMobileSuitState<MobileSuitStateBazooka>();
 
 	MobileSuitAIStateComponent* mobile = dynamic_cast<MobileSuitAIStateComponent*>(m_StateComponent);
 	mobile->CreateCharacterState<CharcterAIStateMove>();

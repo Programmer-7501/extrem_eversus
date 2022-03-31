@@ -28,6 +28,7 @@
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_turn_around_beamrifle_shot.h"
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_down.h"
 #include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_return.h"
+#include"../../component/mobilesuit_state_component/mobilesuit_state/mobilesuit_state_bazooka.h"
 #include"../../component/mesh_component/lockon_cursol_billboard_component.h"
 #include"../../../system/input_manager.h"
 #include"../../scene_function/scene_collision_manager.h"
@@ -121,7 +122,6 @@ void Player::UnloadModel()
 
 Player::Player()
 	:m_LockOnCameraComponent(nullptr)
-	, m_StateComponent(nullptr)
 	, m_LockonCursolBillboardComponent(nullptr)
 	, m_AnimationModelComponent(nullptr)
 	, m_BoostDashOffsetRotation(DirectX::XMQuaternionIdentity())
@@ -349,6 +349,8 @@ void Player::LoadActor()
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateNKakutouThird>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateDown>();
 	m_StateComponent->CreateMobileSuitState<MobileSuitStateReturn>();
+
+	m_StateComponent->CreateMobileSuitState<MobileSuitStateBazooka>();
 }
 
 void Player::InitActor()

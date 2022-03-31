@@ -194,6 +194,8 @@ void Renderer::ExcuteDeferredRendering()
 		return;
 	}
 	m_DeviceContext->OMSetRenderTargets(1, m_RenderTargetView[RENDERTARGET_MAIN].GetAddressOf(), NULL);
+	m_DeviceContext->ClearRenderTargetView(m_RenderTargetView[RENDERTARGET_MAIN].Get(), RendererData::k_RenderTargetClearColor);
+
 
 	m_DeferredRendering->Draw();
 }

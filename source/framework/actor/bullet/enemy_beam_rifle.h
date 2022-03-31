@@ -1,41 +1,26 @@
 /**
- * @file cannon.h
- * @brief キャノン
+ * @file enemy_beam_rifle.h
+ * @brief 敵のビームライフル
  */
 
 #pragma once
 
-#include"bullet.h"
+#include"enemy_bullet.h"
 
  /**
- * @brief キャノンクラス
+ * @brief 敵のビームライフル
  */
-class Cannon : public Bullet
+class EnemyBeamRifle : public EnemyBullet
 {
-private:
+protected:
 	//! 使用パーティクルネーム
 	std::string m_UseParticleName;
 
 	//! パーティクルエミッター構造体
 	CBufferData::ParticleEmitter m_Emitter;
-
-	//! エフェクトマネージャー
-	class EffectManager* m_LandingEffectManager;
-
 public:
-	Cannon();
-	~Cannon();
-
-	/**
-	* @brief アクティブ処理
-	*/
-	virtual void SetActive(bool flag)override;
-
-	/**
-	* @brief 速度のセット
-	* @param[in] const Conv_XM::Vector3f&(velocity) 速度
-	*/
-	virtual void SetDirection(const Conv_XM::Vector3f& velocity) override;
+	EnemyBeamRifle();
+	~EnemyBeamRifle();
 
 	/**
 	* @brief 使用パーティクルの名前のセット
@@ -46,22 +31,22 @@ public:
 protected:
 
 	/**
-	* @brief キャノン独自の読み込み処理
+	* @brief 敵のビームライフル独自の読み込み処理
 	*/
 	virtual void LoadActor() override;
 
 	/**
-	* @brief キャノン独自の初期化処理
+	* @brief 敵のビームライフル独自の初期化処理
 	*/
 	virtual void InitActor() override;
 
 	/**
-	* @brief キャノン独自の入力処理
+	* @brief 敵のビームライフル独自の入力処理
 	*/
 	virtual void ProcessInputActor()override;
 
 	/**
-	* @brief キャノン独自の更新処理
+	* @brief 敵のビームライフル独自の更新処理
 	*/
 	virtual void UpdateActor()override;
 

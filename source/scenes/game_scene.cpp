@@ -13,6 +13,11 @@
 #include"../framework/actor/mobilesuit/ally.h"
 #include"../framework/actor/bullet/bullet.h"
 #include"../framework/actor/bullet/enemy_bullet.h"
+
+#include"../framework/actor/bullet/beam_rifle.h"
+#include"../framework/actor/bullet/enemy_beam_rifle.h"
+#include"../framework/actor/bullet/bazooka.h"
+
 #include"../framework/actor/bullet/cannon.h"
 #include"../framework/actor/ui/arousal_gauge_ui.h"
 #include"../framework/actor/ui/boost_gauge_ui.h"
@@ -25,6 +30,9 @@
 #include"../framework/actor/gamemanager/game_manager.h"
 #include"../framework/actor/effect/mobilesuit_explosion_effect.h"
 #include"../framework/actor/effect/beamrifle_landing_effect.h"
+
+#include"../framework/actor/effect/bazooka_landing_effect.h"
+
 #include"../framework/actor/stage/sideseven_object.h"
 #include"../framework/actor/stage/tree.h"
 #include"../framework/actor/weapon/beam_saber.h"
@@ -118,7 +126,7 @@ void GameScene::LoadData()
 		return;
 	}
 	// パーティクルを作成
-	ParticleManager::GetInstance().CreateParticle(ParticleManagerData::k_BeamParticleName, ParticleManagerData::k_MaxBeamRifleParticleNum, particleSRV);
+	particleManager.CreateParticle(ParticleManagerData::k_BeamParticleName, ParticleManagerData::k_MaxBeamRifleParticleNum, particleSRV);
 
 	// その他アクターマネージャーの作成
 	OtherActorManager* otherActorManager = CreateActorManager<OtherActorManager>();
@@ -298,8 +306,9 @@ void GameScene::LoadData()
 		Logger::GetInstance().SetLog("GameScene::LoadData bulletManagerがnullptr");
 		return;
 	}
+
 	// バレットを作成
-	bulletManager->CreateBulletActors<Bullet>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	bulletManager->CreateBulletActors<BeamRifle>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
 	// プレイヤーにバレットマネージャーを登録
 	player->SetBeamRifleBulletManager(bulletManager);
 
@@ -426,7 +435,7 @@ void GameScene::LoadData()
 
 	// ビームライフルが着弾した時のエフェクトマネージャーを作成
 	EffectManager* beamriflleLandingEffectManager = CreateActorManager<EffectManager>();
-	beamriflleLandingEffectManager->CreateEffectActors<BeanRifleLandingEffect>(20);
+	beamriflleLandingEffectManager->CreateEffectActors<BazookaLandingEffect>(20);
 
 	// バレットマネージャーにエフェクトマネージャーを設定
 	bulletManager->SetLandingEffectManager(beamriflleLandingEffectManager);
@@ -444,7 +453,7 @@ void GameScene::LoadData()
 		return;
 	}
 	// エネミー001用バレットを作成
-	enemy001BulletManager->CreateBulletActors<EnemyBullet>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	enemy001BulletManager->CreateBulletActors<EnemyBeamRifle>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
 	// エネミー001にバレットマネージャー設定
 	enemy001->SetBeamRifleBulletManager(enemy001BulletManager);
 
@@ -473,7 +482,7 @@ void GameScene::LoadData()
 		return;
 	}
 	// バレットを作成
-	enemy002BulletManager->CreateBulletActors<EnemyBullet>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	enemy002BulletManager->CreateBulletActors<EnemyBeamRifle>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
 	// エネミー002用のバレットマネージャーを設定
 	enemy002->SetBeamRifleBulletManager(enemy002BulletManager);
 
@@ -508,7 +517,7 @@ void GameScene::LoadData()
 		return;
 	}
 	// 味方用バレットを作成
-	allyBulletManager->CreateBulletActors<Bullet>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	allyBulletManager->CreateBulletActors<BeamRifle>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
 	// 味方にバレットマネージャーを設定
 	ally->SetBeamRifleBulletManager(allyBulletManager);
 
@@ -597,10 +606,74 @@ void GameScene::LoadData()
 	// テクスチャ読み込み
 	Tree::LoadTexture();
 	otherActorManager->CreateActor<Tree>();
+
+
+
+
+	// バズーカモデル読み込み
+	Bazooka::LoadModel();
+
+	// バレットマネージャーを作成
+	BulletManager* playerBazookaBulletManager = CreateActorManager<BulletManager>();
+	if (playerBazookaBulletManager == nullptr)
+	{
+		Logger::GetInstance().SetLog("GameScene::LoadData playerBazookaBulletManagerがnullptr");
+		return;
+	}
+
+	// バレットを作成
+	playerBazookaBulletManager->CreateBulletActors<Bazooka>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	// プレイヤーにバレットマネージャーを登録
+	player->SetBazookaBulletManager(playerBazookaBulletManager);
+
+
+	// バレットマネージャーを作成
+	BulletManager* enemy001BazookaBulletManager = CreateActorManager<BulletManager>();
+	if (enemy001BazookaBulletManager == nullptr)
+	{
+		Logger::GetInstance().SetLog("GameScene::LoadData enemy001BazookaBulletManagerがnullptr");
+		return;
+	}
+
+	// バレットを作成
+	enemy001BazookaBulletManager->CreateBulletActors<Bazooka>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	// プレイヤーにバレットマネージャーを登録
+	enemy001->SetBazookaBulletManager(enemy001BazookaBulletManager);
+
+
+	// バレットマネージャーを作成
+	BulletManager* enemy002BazookaBulletManager = CreateActorManager<BulletManager>();
+	if (enemy002BazookaBulletManager == nullptr)
+	{
+		Logger::GetInstance().SetLog("GameScene::LoadData enemy002BazookaBulletManagerがnullptr");
+		return;
+	}
+
+	// バレットを作成
+	enemy002BazookaBulletManager->CreateBulletActors<Bazooka>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	// プレイヤーにバレットマネージャーを登録
+	enemy002->SetBazookaBulletManager(enemy002BazookaBulletManager);
+
+
+	// バレットマネージャーを作成
+	BulletManager* allyBazookaBulletManager = CreateActorManager<BulletManager>();
+	if (allyBazookaBulletManager == nullptr)
+	{
+		Logger::GetInstance().SetLog("GameScene::LoadData allyBazookaBulletManagerがnullptr");
+		return;
+	}
+
+	// バレットを作成
+	allyBazookaBulletManager->CreateBulletActors<Bazooka>(PlayerData::k_MaxBeamRifleInstanceNum, PlayerData::k_MaxBeamRifleNum);
+	// プレイヤーにバレットマネージャーを登録
+	ally->SetBazookaBulletManager(allyBazookaBulletManager);
 }
 
 void GameScene::UnloadData()
 {
+	// モデル破棄
+	Bazooka::UnloadModel();
+
 	// テクスチャ破棄
 	Tree::UnloadTexture();
 
